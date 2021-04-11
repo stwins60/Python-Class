@@ -6,4 +6,4 @@ print()
 print("What are your goals for this class - long term goals?")
 goals = input("What would you like to be... when all is said and done with the class? ")
 print(goals)
-print(2+2)
+
