@@ -7,9 +7,9 @@ lname = input('lname: ') #last Name
 fullnames = fname + " " + lname
 
 # #Enter phone, email
-print('Enter Customer\'s Phone Number: ')
+print('Enter Customer\'s Phone Number')
 phone = input('phone: ')
-print('Enter Customer\'s email address: ')
+print('Enter Customer\'s email address')
 email = input('email: ')
 
 #price of a used car
