@@ -1,3 +1,4 @@
+
 #........ and shoot for the Sky in you getting a big promotion & opportunity
 #Enter Full Names
 print("Enter First and Last Name:")
@@ -7,9 +8,9 @@ fullnames = fname + " " + lname
 
 # #Enter phone, email
 print('Enter Customer\'s Phone Number: ')
-phone = input(phone)
+phone = input('phone: ')
 print('Enter Customer\'s email address: ')
-email = input(email)
+email = input('email: ')
 
 #price of a used car
 price = 10000
