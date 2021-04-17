@@ -1,7 +1,3 @@
-fname = input("Enter first name: ")
-
-
-
 #........ and shoot for the Sky in you getting a big promotion & opportunity
 #Enter Full Names
 print("Enter First and Last Name:")
