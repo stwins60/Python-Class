@@ -22,8 +22,8 @@ else:
     down_payment = 0.2 * price
 print('--------------------------------')
 print(f"Down Payment: {down_payment}")
-print("Full Names:", +fullnames)
+print("Full Names:" +fullnames)
 print("Phone: " +phone)
 print("Email: " + email)
-print("Down Payment:" +int(down_payment))
+print("Down Payment:", str(down_payment))
 print('--------------------------------')
