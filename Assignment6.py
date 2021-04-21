@@ -1,11 +1,14 @@
 import sys
 
+#TODO: use functions
+
 # Student information blueprint
 class Student_details:
     # Students attributes
     def __init__(self):
         self.full_name = input("Enter your first and last name: ")
         self.student_ID = input("Enter your student ID: ")
+        self.student_gender = input("Enter your student gender: ")
         self.mailing_address = input("Enter your mailing address: ")
         self.city = input("Enter your city: ")
         self.country = input("Enter your country: ")
@@ -16,6 +19,7 @@ class Student_details:
     def show(self):
         print("Full name is ", self.full_name)
         print("The student id is  ", self.student_ID)
+        print("The student gender is  ", self.student_gender)
         print("The student mailing address is ", self.mailing_address)
         print("The student city is  ", self.city)
         print("The student country is  ", self.country)
@@ -24,7 +28,12 @@ class Student_details:
         print("The student phone number is  ", self.phoneNumber)
 
     def scholarship_check(self):
+       #TODO: call the student gender, average score and validate the scholorship
+        average_score()
+        Student_details.student_gender
         if self.region == 'A':
+            if self.student_gender == 'male':
+                if average_score().average_test_score >= 80 and average_score().programming_score >=10
             print(f"The student {self.full_name} is eligible for a scholarship.")
         elif self.region == 'O':
             print(f"Sorry, the student {self.full_name} is not eligible for a scholarship.")
@@ -48,6 +57,7 @@ class average_score:
         self.testscore.append(self.test_one)
         self.testscore.append(self.test_two)
         self.average_test_score = sum(self.testscore) / len(self.testscore)
+        self.gender = Student_details.student_gender
 
     def show_test_scores(self):
         print("first quiz score ", str(self.quiz_one))
