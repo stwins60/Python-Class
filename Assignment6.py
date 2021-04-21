@@ -51,10 +51,10 @@ class average_score:
 
     def show_test_scores(self):
         print("first quiz score ", str(self.quiz_one))
-        print("The student second quiz score ", str(self.quiz_two))
-        print("The student third quiz score ", str(self.quiz_three))
-        print("The student zoom score ", str(self.zoom_score))
-        print("The student programming assignment score ", str(self.programming_score))
+        print("The student second quiz score is ", str(self.quiz_two))
+        print("The student third quiz score is ", str(self.quiz_three))
+        print("The student zoom score is ", str(self.zoom_score))
+        print("The student programming assignment score is ", str(self.programming_score))
 
     def student_average_score(self):
         print("The student Average score is " + str(self.average_test_score))
