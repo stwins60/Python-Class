@@ -33,8 +33,8 @@ class Student_details:
         Student_details.student_gender
         if self.region == 'A':
             if self.student_gender == 'male':
-                if average_score().average_test_score >= 80 and average_score().programming_score >=10
-            print(f"The student {self.full_name} is eligible for a scholarship.")
+                if average_score().average_test_score >= 80 and average_score().programming_score >=10:
+                    print(f"The student {self.full_name} is eligible for a scholarship.")
         elif self.region == 'O':
             print(f"Sorry, the student {self.full_name} is not eligible for a scholarship.")
             sys.exit
