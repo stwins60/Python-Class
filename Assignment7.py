@@ -1,7 +1,34 @@
 
 option = ''
-contact = {}
+contact = {
+    'contact1': {'first_name': '', 'middle_initial': '', 'last_name': '',
+                 'mailing_address': '',
+                 'city': '',
+                 'country': '',
+                 'state': '',
+                 'email_address': '',
+                 'phone_number': ''
 
+                 },
+    'contact2': {'first_name': '', 'middle_initial': '', 'last_name': '',
+                 'mailing_address': '',
+                 'city': '',
+                 'country': '',
+                 'state': '',
+                 'email_address': '',
+                 'phone_number': ''
+
+                 },
+    'contact3': {'first_name': '', 'middle_initial': '', 'last_name': '',
+                 'mailing_address': '',
+                 'city': '',
+                 'country': '',
+                 'state': '',
+                 'email_address': '',
+                 'phone_number': ''
+
+                 }
+}
 
 
 while option != 'Q':
@@ -13,19 +40,27 @@ while option != 'Q':
 
     elif option == '2':
         print("Adding Contact")
-        while True:
-            add = input("Do you want to add a new contact (y/n): ")
-            if add == 'y':
-                for i in range(100):
-                    print("Enter Contact Information")
-                    i = {}
-                    first_name = input("Enter First Name: ")
-                    middle_name = input("Enter Middle Initial: ")
-
-                    contact[i]['first_name'].insert(first_name)
-                    contact[i]['middle_initial'].insert(middle_name)
+        while input("Do you want to add a new contact (y/n): ") == 'y':
+            cont_loc = str(input("Enter the location you want to save your contact [contact1, contact2, and contact3]: "))
+            for i in contact.keys():
+                if i == cont_loc:
+                    
+                    contact[i]['first_name'] = input("Enter First Name: ")
+                    contact[i]['middle_initial'] = input(
+                        "Enter Middle Initial: ")
+                    contact[i]['last_name'] = input("Enter Last Name: ")
+                    contact[i]['mailing_address'] = input(
+                        "Enter Mailing Address: ")
+                    contact[i]['city'] = input("Enter City: ")
+                    contact[i]['country'] = input("Enter Country: ")
+                    contact[i]['state'] = input("Enter State: ")
+                    contact[i]['email_address'] = input("Enter Email Address: ")
+                    contact[i]['phone_number'] = input("Enter Phone Number: ")
 
                     print(contact)
+                
+
+            # print(contact)
 
         #         for item in contact.keys():
         #             contact[item]['first_name'] = input("Enter First Name: ")
@@ -42,7 +77,7 @@ while option != 'Q':
         #             break
         # print(contact)
 
-    elif option == '3':
+    elif option == '3': # TODO Work on removing the contact
         print("Removing Account")
         name = input("Remove contact by name: ")
 
@@ -62,10 +97,11 @@ while option != 'Q':
         else:
             print(f"{name} not found")
 
-    elif option == '4':
+    elif option == '4': # TODO Work on removing the contact
         opt = ''
         print("Updating a Contact")
-        print("Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
+        print(
+            "Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
         opt = input("What field will you will like to update: ")
         if opt == "first_name":
             contact['first_name'] = input("Enter First Name: ")
