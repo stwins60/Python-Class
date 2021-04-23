@@ -1,41 +1,46 @@
 
 option = ''
-contact = {
-    1:{},
-    2:{},
-    3:{}
-}
+contact = {}
+
+
 
 while option != 'Q':
 
     option = str(input("Type in a number (1-5 or Q): "))
 
     if option == '1':
-        print("1. List Phone Numbers")
-        print("2. Add a Contact")
-        print("3. Remove a Contact")
-        print("4. Update a Contact")
-        print("5. Lookup a Contacts by Number")
-        print("Q. Quit")
+        print()
 
     elif option == '2':
         print("Adding Contact")
         while True:
             add = input("Do you want to add a new contact (y/n): ")
             if add == 'y':
-                for i in range(10):
-                    contact[i]['first_name'] = input("Enter First Name: ")
-                    contact[i]['middle_initial'] = input("Enter Middle Initial: ")
-                    contact[i]['last_name'] = input("Enter Last Name: ")
-                    contact[i]['mailing_address'] = input("Enter Mailing Address: ")
-                    contact[i]['city'] = input("Enter City: ")
-                    contact[i]['country'] = input("Enter Country: ")
-                    contact[i]['state'] = input("Enter State: ")
-                    contact[i]['email_address'] = input("Enter Email Address: ")
-                    contact[i]['phone_number'] = input("Enter Phone Number: ")
-                else:
-                    break
-        print(contact)
+                for i in range(100):
+                    print("Enter Contact Information")
+                    i = {}
+                    first_name = input("Enter First Name: ")
+                    middle_name = input("Enter Middle Initial: ")
+
+                    contact[i]['first_name'].insert(first_name)
+                    contact[i]['middle_initial'].insert(middle_name)
+
+                    print(contact)
+
+        #         for item in contact.keys():
+        #             contact[item]['first_name'] = input("Enter First Name: ")
+        #             contact[item]['middle_initial'] = input("Enter Middle Initial: ")
+        #             contact[item]['last_name'] = input("Enter Last Name: ")
+        #             contact[item]['mailing_address'] = input("Enter Mailing Address: ")
+        #             contact[item]['city'] = input("Enter City: ")
+        #             contact[item]['country'] = input("Enter Country: ")
+        #             contact[item]['state'] = input("Enter State: ")
+        #             contact[item]['email_address'] = input("Enter Email Address: ")
+        #             contact[item]['phone_number'] = input("Enter Phone Number: ")
+        #             print(item)
+        #     else:
+        #             break
+        # print(contact)
 
     elif option == '3':
         print("Removing Account")
