@@ -32,20 +32,25 @@ contact = {
 
 
 while option != 'Q':
+    print()
     print("1. List Phone Numbers")
     print("2. Add a Contact")
     print("3. Remove a Contact")
     print("4. Update a Contact")
     print("5. Lookup a Contacts by Number")
     print("Q. Quit")
+    print()
 
     option = str(input("Type in a number (1-5 or Q): "))
 
-    if option == '1': # TODO: Fix issue wuth TypeError: 'builtin_function_or_method' object is not iterable
+    if option == '1':  # TODO: Fix issue wuth TypeError: 'builtin_function_or_method' object is not iterable
         print("List Phone Numbers")
-        for i in contact.keys:
-            print(f"The Phone numbers in {contact[i]} is: {contact[i]['phone_number']}")
-        
+        for i in contact.keys():
+            numbers = contact[i]['phone_number']
+            if numbers == '':
+                print(f"No number is found in {contact[i].keys()}")
+            else:
+                print(f"The Phone numbers in {contact[i].keys()} is: {numbers}")
 
     elif option == '2':
         print("Adding Contact")
@@ -69,22 +74,29 @@ while option != 'Q':
                     contact[i]['phone_number'] = input("Enter Phone Number: ")
 
                     print()
-                    result = """First Name: {} \nMiddle Initials: {} \nLast Name: {} \nMailing Address: {}
-                    City: {} \nCountry: {} \nState: {} \nEmail Address: {} \nPhone Number: {}""".format(contact[i]['first_name'],
-                                                                                                        contact[i]['middle_initial'],
-                                                                                                        contact[i]['last_name'],
-                                                                                                        contact[i]['mailing_address'],
-                                                                                                        contact[i]['city'],
-                                                                                                        contact[i]['country'],
-                                                                                                        contact[i]['state'],
-                                                                                                        contact[i]['email_address'],
-                                                                                                        contact[i]['phone_number'])
+                    result = """First Name: {} \nMiddle Initials: {} \nLast Name: {} \nMailing Address: {} \nCity: {} \nCountry: {} \nState: {} \nEmail Address: {} \nPhone Number: {}""".format(contact[i]['first_name'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'middle_initial'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'last_name'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'mailing_address'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'city'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'country'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'state'],
+                                                                                                                                                                                                 contact[i][
+                                                                                                                                                                                                     'email_address'],
+                                                                                                                                                                                                 contact[i]['phone_number'])
 
                     print(result)
 
-    elif option == '3': 
+    elif option == '3':
         print("Removing Account")
-        opt = input("Enter location you want to delete your contact from [contact1, contact2, and contact3]: ")
+        opt = input(
+            "Enter location you want to delete your contact from [contact1, contact2, and contact3]: ")
         for i in contact.keys():
             if i == opt:
                 name = input("Remove contact by name: ")
@@ -98,51 +110,87 @@ while option != 'Q':
                     del contact[i]['state']
                     del contact[i]['email_address']
                     del contact[i]['phone_number']
-                    
+
                     print("The Contact has been removed")
                 else:
                     print(f"{name} not found")
 
-
     elif option == '4':  # TODO Run the test
         opt = ''
         print("Updating a Contact")
-        upt = input("Enter location you want to update your contact from [contact1, contact2, and contact3]: ")
-        
-        if i in contact.keys():
-            print(
-                "Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
-            opt = input("What field will you will like to update: ")
-            if opt == "first_name":
-                contact[i]['first_name'] = input("Enter First Name: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "middle_initial":
-                contact[i]['middle_initial'] = input("Enter Middle Initial: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "last_name":
-                contact[i]['last_name'] = input("Enter Last Name: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "mailing_address":
-                contact[i]['mailing_address'] = input("Enter Mailing Address: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "city":
-                contact[i]['city'] = input("Enter City: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "country":
-                contact[i]['country'] = input("Enter Country: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "state":
-                contact[i]['state'] = input("Enter State: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "email_address":
-                contact[i]['email_address'] = input("Enter Email Address: ")
-                print(f"{opt} has been updated successfully")
-            elif opt == "phone_number":
-                contact[i]['phone_number'] = input("Enter Phone Number: ")
-                print(f"{opt} has been updated successfully")
+        upt = input(
+            "Enter location you want to update your contact from [contact1, contact2, and contact3]: ")
+
+        for i in contact.keys():
+            if i == upt:
+                print(
+                    "Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
+                opt = input("What field will you will like to update: ")
+                if opt == "first_name":
+                    contact[i]['first_name'] = input("Enter First Name: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "middle_initial":
+                    contact[i]['middle_initial'] = input("Enter Middle Initial: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "last_name":
+                    contact[i]['last_name'] = input("Enter Last Name: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "mailing_address":
+                    contact[i]['mailing_address'] = input(
+                        "Enter Mailing Address: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "city":
+                    contact[i]['city'] = input("Enter City: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "country":
+                    contact[i]['country'] = input("Enter Country: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "state":
+                    contact[i]['state'] = input("Enter State: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "email_address":
+                    contact[i]['email_address'] = input("Enter Email Address: ")
+                    print(f"{opt} has been updated successfully")
+                elif opt == "phone_number":
+                    contact[i]['phone_number'] = input("Enter Phone Number: ")
+                    print(f"{opt} has been updated successfully")
             else:
                 print("invalid input")
-                
+
     elif option == '5':
-        pass
-        # TODO: Complete the code.
+        print("Lookup a Contact by Number")
+        
+        lookup = input(
+            "Enter location you want to lookup number from [contact1, contact2, and contact3]: ")
+        
+        for i in contact.keys():
+            if i == lookup:
+                number = input("Please enter the number to look up: ")
+                if contact[i]['phone_number'] == number:
+                    result = """First Name: {} \nMiddle Initials: {} \nLast Name: {} \nMailing Address: {} \nCity: {} \nCountry: {} \nState: {} \nEmail Address: {} \nPhone Number: {}""".format(contact[i]['first_name'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'middle_initial'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'last_name'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'mailing_address'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'city'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'country'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'state'],
+                                                                                                                                                                                                    contact[i][
+                                                                                                                                                                                                        'email_address'],
+                                                                                                                                                                                                    contact[i]['phone_number'])
+                    print(result)
+                else:
+                    print(f"Phone number {number} not found")
+
+def write_contact_to_text():
+    f = open('contact.txt', 'w')
+    f.write(str(contact))
+    f.close()
+    
+
+write_contact_to_text()
