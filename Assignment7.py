@@ -68,6 +68,7 @@ while option != 'Q':
                         "Enter Email Address: ")
                     contact[i]['phone_number'] = input("Enter Phone Number: ")
 
+                    print()
                     result = """First Name: {} \nMiddle Initials: {} \nLast Name: {} \nMailing Address: {}
                     City: {} \nCountry: {} \nState: {} \nEmail Address: {} \nPhone Number: {}""".format(contact[i]['first_name'],
                                                                                                         contact[i]['middle_initial'],
