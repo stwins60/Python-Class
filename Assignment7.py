@@ -32,19 +32,29 @@ contact = {
 
 
 while option != 'Q':
+    print("1. List Phone Numbers")
+    print("2. Add a Contact")
+    print("3. Remove a Contact")
+    print("4. Update a Contact")
+    print("5. Lookup a Contacts by Number")
+    print("Q. Quit")
 
     option = str(input("Type in a number (1-5 or Q): "))
 
-    if option == '1':
-        print()
+    if option == '1': # TODO: Fix issue wuth TypeError: 'builtin_function_or_method' object is not iterable
+        print("List Phone Numbers")
+        for i in contact.keys:
+            print(f"The Phone numbers in {contact[i]} is: {contact[i]['phone_number']}")
+        
 
     elif option == '2':
         print("Adding Contact")
         while input("Do you want to add a new contact (y/n): ") == 'y':
-            cont_loc = str(input("Enter the location you want to save your contact [contact1, contact2, and contact3]: "))
+            cont_loc = str(input(
+                "Enter the location you want to save your contact [contact1, contact2, and contact3]: "))
             for i in contact.keys():
                 if i == cont_loc:
-                    
+
                     contact[i]['first_name'] = input("Enter First Name: ")
                     contact[i]['middle_initial'] = input(
                         "Enter Middle Initial: ")
@@ -54,109 +64,84 @@ while option != 'Q':
                     contact[i]['city'] = input("Enter City: ")
                     contact[i]['country'] = input("Enter Country: ")
                     contact[i]['state'] = input("Enter State: ")
-                    contact[i]['email_address'] = input("Enter Email Address: ")
+                    contact[i]['email_address'] = input(
+                        "Enter Email Address: ")
                     contact[i]['phone_number'] = input("Enter Phone Number: ")
 
-                    print(contact)
-                
+                    result = """First Name: {} \nMiddle Initials: {} \nLast Name: {} \nMailing Address: {}
+                    City: {} \nCountry: {} \nState: {} \nEmail Address: {} \nPhone Number: {}""".format(contact[i]['first_name'],
+                                                                                                        contact[i]['middle_initial'],
+                                                                                                        contact[i]['last_name'],
+                                                                                                        contact[i]['mailing_address'],
+                                                                                                        contact[i]['city'],
+                                                                                                        contact[i]['country'],
+                                                                                                        contact[i]['state'],
+                                                                                                        contact[i]['email_address'],
+                                                                                                        contact[i]['phone_number'])
 
-            # print(contact)
+                    print(result)
 
-        #         for item in contact.keys():
-        #             contact[item]['first_name'] = input("Enter First Name: ")
-        #             contact[item]['middle_initial'] = input("Enter Middle Initial: ")
-        #             contact[item]['last_name'] = input("Enter Last Name: ")
-        #             contact[item]['mailing_address'] = input("Enter Mailing Address: ")
-        #             contact[item]['city'] = input("Enter City: ")
-        #             contact[item]['country'] = input("Enter Country: ")
-        #             contact[item]['state'] = input("Enter State: ")
-        #             contact[item]['email_address'] = input("Enter Email Address: ")
-        #             contact[item]['phone_number'] = input("Enter Phone Number: ")
-        #             print(item)
-        #     else:
-        #             break
-        # print(contact)
-
-    elif option == '3': # TODO Work on removing the contact
+    elif option == '3': 
         print("Removing Account")
-        name = input("Remove contact by name: ")
+        opt = input("Enter location you want to delete your contact from [contact1, contact2, and contact3]: ")
+        for i in contact.keys():
+            if i == opt:
+                name = input("Remove contact by name: ")
+                if contact[i]['first_name'] == name:
+                    del contact[i]['first_name']
+                    del contact[i]['middle_initial']
+                    del contact[i]['last_name']
+                    del contact[i]['mailing_address']
+                    del contact[i]['city']
+                    del contact[i]['country']
+                    del contact[i]['state']
+                    del contact[i]['email_address']
+                    del contact[i]['phone_number']
+                    
+                    print("The Contact has been removed")
+                else:
+                    print(f"{name} not found")
 
-        if name in contact.values():
-            print(name)
-            del contact['first_name']
-            del contact['middle_initial']
-            del contact['last_name']
-            del contact['mailing_address']
-            del contact['city']
-            del contact['country']
-            del contact['state']
-            del contact['email_address']
-            del contact['phone_number']
 
-            print("The Contact has been removed")
-        else:
-            print(f"{name} not found")
-
-    elif option == '4': # TODO Work on removing the contact
+    elif option == '4':  # TODO Run the test
         opt = ''
         print("Updating a Contact")
-        print(
-            "Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
-        opt = input("What field will you will like to update: ")
-        if opt == "first_name":
-            contact['first_name'] = input("Enter First Name: ")
-        elif opt == "middle_initial":
-            contact['middle_initial'] = input("Enter Middle Initial: ")
-        elif opt == "last_name":
-            contact['last_name'] = input("Enter Last Name: ")
-        elif opt == "mailing_address":
-            contact['mailing_address'] = input("Enter Mailing Address: ")
-        elif opt == "city":
-            contact['city'] = input("Enter City: ")
-        elif opt == "country":
-            contact['country'] = input("Enter Country: ")
-        elif opt == "state":
-            contact['state'] = input("Enter State: ")
-        elif opt == "email_address":
-            contact['email_address'] = input("Enter Email Address: ")
-        elif opt == "phone_number":
-            contact['phone_number'] = input("Enter Phone Number: ")
-        else:
-            print("invalid input")
-
-
-# def add_contact():
-
-    # contact['first_name'] = input("Enter First Name: ")
-    # contact['middle_initial'] = input("Enter Middle Initial: ")
-    # contact['last_name'] = input("Enter Last Name: ")
-    # contact['mailing_address'] = input("Enter Mailing Address: ")
-    # contact['city'] = input("Enter City: ")
-    # contact['country'] = input("Enter Country: ")
-    # contact['state'] = input("Enter State: ")
-    # contact['email_address'] = input("Enter Email Address: ")
-    # contact['phone_number'] = input("Enter Phone Number: ")
-
-
-# def remove_contact():
-#     if name in contact:
-#         del contact[first_name]
-#         del contact[middle_initial]
-#         del contact[last_name]
-#         del contact[mailing_address]
-#         del contact[city]
-#         del contact[country]
-#         del contact[state]
-#         del contact[email_address]
-#         del contact[phone_number]
-#     else:
-#         print(f"{contact[first_name]} not found")
-
-# def update_contact():
-#     if
-# def display_options():
-
-
-# add_contact()
-
-# print(contact)
+        upt = input("Enter location you want to update your contact from [contact1, contact2, and contact3]: ")
+        
+        if i in contact.keys():
+            print(
+                "Field Options [first_name, middle_initial, last_name, mailing_address, city, country, state, email_address, phone_number]")
+            opt = input("What field will you will like to update: ")
+            if opt == "first_name":
+                contact[i]['first_name'] = input("Enter First Name: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "middle_initial":
+                contact[i]['middle_initial'] = input("Enter Middle Initial: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "last_name":
+                contact[i]['last_name'] = input("Enter Last Name: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "mailing_address":
+                contact[i]['mailing_address'] = input("Enter Mailing Address: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "city":
+                contact[i]['city'] = input("Enter City: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "country":
+                contact[i]['country'] = input("Enter Country: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "state":
+                contact[i]['state'] = input("Enter State: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "email_address":
+                contact[i]['email_address'] = input("Enter Email Address: ")
+                print(f"{opt} has been updated successfully")
+            elif opt == "phone_number":
+                contact[i]['phone_number'] = input("Enter Phone Number: ")
+                print(f"{opt} has been updated successfully")
+            else:
+                print("invalid input")
+                
+    elif option == '5':
+        pass
+        # TODO: Complete the code.
