@@ -31,13 +31,15 @@ class Student_details:
        #TODO: call the student gender, average score and validate the scholorship
         average_score()
         Student_details.student_gender
-        if self.region == 'A':
-            if self.student_gender == 'male':
-                if average_score().average_test_score >= 80 and average_score().programming_score >=10:
-                    print(f"The student {self.full_name} is eligible for a scholarship.")
-        elif self.region == 'O':
-            print(f"Sorry, the student {self.full_name} is not eligible for a scholarship.")
-            sys.exit
+        if student_details.region == 'A':
+            if student_details.student_gender == 'male':
+                if average_test_score.average_test_score >= 80 and average_test_score.average_test_score.programming_score >= 10 and average_test_score.average_test_score.zoom_score >= 3:
+                    print(f"The student {student_details.full_name} is eligible for a scholarship.")
+                elif student_details.student_gender == 'female':
+                    if average_test_score.average_test_score >= 76 and average_test_score.average_test_score.programming_score >= 10 and average_test_score.average_test_score.zoom_score >= 3:
+                        print(f"The student {student_details.full_name} is eligible for a scholarship.")
+        elif student_details.region == 'O':
+            print(f"Sorry, based on your region ({student_details.region}), you are not eligible for a scholarship.")
 
 
 class average_score:
