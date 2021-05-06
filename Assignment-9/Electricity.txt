@@ -1,0 +1,20 @@
+
+customer_name -> Idris
+
+area -> Urban
+
+building -> Light Industrial
+
+kilowatt -> 500
+
+billing_address -> 1811 w shore dr
+
+city -> chicago
+
+town -> il
+
+country -> 
+
+monthly_cost -> 
+
+total_cost -> 
