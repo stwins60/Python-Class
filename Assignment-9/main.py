@@ -2,9 +2,6 @@ import constant
 import mysql.connector as mysql
 from mysql.connector import Error
 
-# import sqlite3 as sql
-# from sqlite3 import Error
-
 details = {'customer_name': input("Please enter the customer\'s name: "),
            'area': input("Please enter the customer\'s area [Rural/Urban]: "),
            'building': input("Please enter the customer\'s building [Residential, Light Industrial, "
@@ -93,15 +90,6 @@ def discount():
         print(f"The monthly total cost is {details['total_cost']}")
 
 
-# print(details)
-# with open('Electricity.txt', 'w') as file:
-#     for key, value in details.items():
-#         display = "\n" + key + " -> " + str(value) + "\n"
-#         file.write(display)
-#
-# file.close()
-
-
 def electricity_DB():
     conn = mysql.connect(
         host='localhost',
@@ -128,21 +116,12 @@ def electricity_DB():
         cur.execute(sql)
 
         result = cur.fetchall()
-        print(result)
 
-        for x in result:
-            with open('Electricity.txt', 'w') as file:
-                for key, value in x.items():
-                    display = "Kenya Power and Lighting Company (KPLC)\n" + key + " -> " + str(value) + "\n"
-                    file.write(display)
-
-            file.close()
-
-        with open('kPLC_Customer.txt', 'w') as file:
+        with open('kPLC_Customer.txt', 'w') as file2:
             for row in result:
-
-                file.write(str(row))
-        file.close()
+                data = str(row)
+            file2.write('Kenya Power and Lighting Company (KPLC)' + "\n" + data)
+            file2.close()
 
         conn.close()
     except Error as e:
@@ -152,3 +131,8 @@ def electricity_DB():
 charges_per_building()
 discount()
 electricity_DB()
+
+with open('Electricity.txt', 'w') as file:
+    for i in details:
+        display = "\n" + i + "\t" + str(details[i]) + "\n"
+    file.write(display)

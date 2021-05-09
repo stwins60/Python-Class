@@ -1,20 +1,2 @@
-Kenya Power and Lighting Company (KPLC)
-customer_name -> Mark
-Kenya Power and Lighting Company (KPLC)
-area -> Urban
-Kenya Power and Lighting Company (KPLC)
-building -> Light Industrial
-Kenya Power and Lighting Company (KPLC)
-kilowatt -> 450
-Kenya Power and Lighting Company (KPLC)
-billing_address -> 1723 W North ave
-Kenya Power and Lighting Company (KPLC)
-city -> Chicago
-Kenya Power and Lighting Company (KPLC)
-town -> IL
-Kenya Power and Lighting Company (KPLC)
-county -> Cook
-Kenya Power and Lighting Company (KPLC)
-monthly_cost -> 473.04
-Kenya Power and Lighting Company (KPLC)
-total_cost -> 458.849
+
+total_cost	307.52880000000005

@@ -1,39 +1,14 @@
-phonebook = {'book1': {},
-             'book2': {}, 'book3': {}, 'book4': {}, 'book5': {}}
+details = {'customer_name': input("Please enter the customer\'s name: "),
+           'area': input("Please enter the customer\'s area [Rural/Urban]: "),
+           'building': input("Please enter the customer\'s building [Residential, Light Industrial, "
+                             "Heavy Industrial: "),
+           'kilowatt': int(float(input("Please enter the customer\'s kilowatt usage: "))),
+           'billing_address': input("Please enter the customer\'s billing address: "),
+           'city': input("Please enter the customer\'s city: "), 'town': input("Please enter the customer\'s town: "),
+           'country': '', 'monthly_cost': '', 'total_cost': ''}
 
-while input("Do you want to add a new contact [y/n]: ") == "y":
-    location = input("Enter the location to save details: ")
-    for i in phonebook.keys():
-        if i == location:
-            for data in range(1, 4):
-                key = input("Enter key: ")
-                value = input("Enter the value: ")
-                phonebook[i][key] = value
-
-                print(phonebook)
-
-
-with open('phonebook.txt', 'w') as file:
-    file.write(str(phonebook))
-    file.close()
-
-
-with open("phonebook.txt") as file: # Use file to refer to the file object
- 
-   data = file.readLine()
-   print(data.strip('\n'))
-
-
-    # if i == location:
-    #     print(True)
-    # else:
-    #     print(False)
-
-# for i in range(1,15):
-#     for i in phonebook.keys():
-#         if phonebook[i] == location:
-#             key = input("Enter key: ")
-#             value = input("Enter the value: ")
-#             phonebook[key] = value
-
-# print(phonebook)
+data = []
+for key, value in details.items():
+    print(value)
+    data.append(value)
+print(data)
